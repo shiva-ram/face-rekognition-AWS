@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<style type="text/css">
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+body{
+    background-image: url("https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/africa-background-7.jpg?fit=1920%2C1080")
+}
+</style>
+<body>
+    <body>
+    <nav class="navbar navbar-expand-sm ">
+
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <li style="float:right"><a class=" btn navbar-btn btn-primary" href="/">logout</a></li>
+    
+    <li class="nav-item active">
+      <li style="float:right"><a class="btn navbar-btn btn-warning" href="/upload">upload</a></li>
+  </ul>
+</nav>
+    <table style="width:300px">
+
+<h2>Create Object from JSON String</h2>
+{{text}}
+
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+           {% for message in messages[0] %}
+      <tr>
+        <td>{{ message['id'] }}</td>
+          <td> {{message['nam']}}</td>
+      
+      </tr>
+   {% endfor %}
+   {% endif %}
+{% endwith %}
+</table>
+</body>
+</html>

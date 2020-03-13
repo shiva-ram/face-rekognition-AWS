@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<style type="text/css">
+h1 {
+    font-size: 40px;
+}
+body{
+background-image:url("https://s3-us-west-1.amazonaws.com/epaoa/images/epaoa/55a5688746213cd6482c5095a671c9b9132de48149c314a34a785.jpg");
+background-repeat: no-repeat; 
+text-align:center;
+color:#0000ff;
+}
+.submitbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.submitbtn:hover {
+    opacity: 1;
+}
+</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    function validate(){
+    x=document.myForm
+    input=x.myInput.value
+    if (input.length>10){
+        alert("The field cannot contain more than 10 characters!")
+        return false
+    }else {
+        return true
+    }
+}
+
+</script>
+</head>
+<!--{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}-->
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <li style="float:right"><a class=" btn navbar-btn btn-primary" href="/">logout</a></li>
+    </li>
+    
+    <li class="nav-item active">
+      <li style="float:right"><a class="nav-link" href="/show">show</a></li>
+    </li>
+  </ul>
+</nav>
+       
+<form method="POST" enctype="multipart/form-data" action="/" name="myForm" onsubmit="return validate()">
+
+<table cellpadding="2" width="20%"  align="center" cellspacing="2">
+
+
+<tr>
+
+  <td colspan=2>
+
+  <center><font size=4><b> STUDENT REGISTRATION FORM </b></font></center>
+
+  </td>
+
+  </tr>
+
+<tr>
+
+  <td><label for="texStudentId"><b>Student Id:</b></label></td>
+
+  <td><input type=text name="sid" id="texStudentId" size="30"></td>
+
+  </tr>
+
+
+<tr>
+
+  <td><label for="texStudentName"><b>Student Name:</b></label></td>
+
+  <td><input type="text" name="name" id="texStudentName"
+
+  size="30"></td>
+
+
+  </tr>
+
+  <tr>
+
+  <td><label for="texaddress"><b>Address:</b></label></td>
+
+  <td><input type="text" name="address" id="texaddress" size="30"></td>
+
+  <!--<td><textarea rows="8" cols="20" name="texaddress"></textarea></td>-->
+
+  </tr>
+
+
+<tr>
+
+  <td><label for="texMobileNo"><b>MobileNo:</b></label></td>
+
+  <td><input type="text" name="phone" id="texMobileNo" size="30"></td>
+
+  </tr>
+ 
+<!-- 
+  <tr>
+
+  <td><label for="email"><b>Email Id:</b></label></td>
+  <td><input type="email" name="emaEmail" id="emaEmail" size="30"></td>
+
+  </tr>
+ 
+ -->
+   <tr>
+
+  
+  {{ form.csrf_token }}
+    {{ form.example }}  
+
+  </tr>
+  <tr>
+    <td><button type="submit" class="submitbtn">Submit</button></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
